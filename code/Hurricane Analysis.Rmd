@@ -18,16 +18,6 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
 # Introduction
-This file contains all code pertaining to the publication titled How’s the weather in there? Hurricanes drive short-term declines in the abundance of direct life cycle parasites of riverine fish. Submitted for publication in the Journal of Freshwater Ecology special issue on parasites in freshwater ecosystems March 6, 2026.
-Authors:Whalen C.1, Boyd D.2, Commisso G.1, Christner S.3, Jones I.4, Leslie K.1, Thirtyacre J.1, Díaz-Morales D.M.1,8, Kuris A.M.5, Mann J.6, Bart H.7, and Wood C.L.1
-1School of Aquatic and Fishery Sciences, University of Washington, Seattle, Washington, USA
-2University of South Carolina, Columbia, South Carolina, USA
-3Valdosta State University, Valdosta, Georgia, USA
-4Tuskegee University, Tuskegee, Alabama, USA
-5University of California, Santa Barbara, Santa Barbara, California, USA
-6Tulane University Biodiversity Research Institute, Belle Chasse, Louisiana, USA
-7Tulane Univeristy, New Orleans, Louisiana, USA
-8Biological Sciences Department, DePaul University, Chicago, Illinois, USA
 
 AI Disclosure: Some aspects of this code was researched using AI assistance (ChatGPT Version 5.3), but all code assistance was computational, not theoretical, and no direct copy-paste code was used in this project. 
 
@@ -3320,19 +3310,19 @@ mono <- ggplot(combined_preds_mono,
 hurricane_final_plot <- ggarrange(full, trem, meta, mono, common.legend = TRUE, legend = "top", labels = c("A", "B", "C", "D"))
 plot(hurricane_final_plot)
 
-ggsave("hurricane_result.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("hurricane_result.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 trem
-ggsave("trem_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("trem_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 meta
-ggsave("meta_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("meta_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 mono
-ggsave("mono_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("mono_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 full
-ggsave("full_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("full_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 # plot life cycle results
 lc6 <- ggpredict(final_h_life3, terms = c("event", "timing", "life_history"))
@@ -3391,7 +3381,7 @@ ggplot(combined_preds,
   ) +
   guides(linetype = "none")
 
-ggsave("life_cycles.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("life_cycles.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
  # plot by species of parasite
 
@@ -3465,7 +3455,7 @@ myxo <- ggplot(combined_preds,
 
 
 myxo
-ggsave("myxo_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("myxo_hurricane.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 
 ```
@@ -3560,7 +3550,7 @@ timeline_plot <- ggplot(df, aes(x = min_start, y = 1, color = category)) +
   )
 
 timeline_plot
-ggsave("ch_only.jpeg", width = 10, height = 3, dpi = 300)
+ggsave("ch_only.jpeg", width = 10, height = 3, dpi = 1000)
 
 # lots samples from TUBRI
 # Load data about TUBRI lots
@@ -3617,7 +3607,7 @@ ggmap(base_map) +
     axis.ticks.x = element_line(color = "black")
   )
 
-ggsave("river_plot_full.jpeg", width = 3, height = (9/16)*10, dpi = 300)
+ggsave("river_plot_full.jpeg", width = 3, height = (9/16)*10, dpi = 1000)
 
 #####
 
@@ -3690,7 +3680,7 @@ final_plot <- (a | b | c | d | e | f | g) +
 final_plot
 
 
-ggsave("river_plot.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("river_plot.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 # Making Maps
 
@@ -3772,7 +3762,7 @@ nola_map <- ggplot() +
 
 nola_map
 
-ggsave("nola_plot.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("nola_plot.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 
 final_maps <- (
@@ -3788,7 +3778,7 @@ final_maps <- (
 
 final_maps
 
-ggsave("final_maps.jpeg", width = 12.5, height = (9/16)*10, dpi = 300)
+ggsave("final_maps.jpeg", width = 12.5, height = (9/16)*10, dpi = 1000)
 
 
 # Make fish replication plot
@@ -3827,7 +3817,7 @@ final_timeline <- wrap_plots(
   timeline_plot, fish, ncol = 1, heights = c(1, 2))
 final_timeline
 
-ggsave("timeline.jpeg", width = 12, height = (9/16)*11, dpi = 300)
+ggsave("timeline.jpeg", width = 12, height = (9/16)*11, dpi = 1000)
 ```
 
 
@@ -4094,7 +4084,7 @@ final_plot <- wrap_plots(season6, season3, ncol = 1, guides = "collect") +
 final_plot
 
 
-ggsave("seasonality.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("seasonality.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 ```
 
@@ -4210,7 +4200,7 @@ final_plot <- wrap_plots(season6, season3, ncol = 1, guides = "collect") +
 final_plot
 
 
-ggsave("seasonality_lc.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("seasonality_lc.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 
 ```
 
@@ -4347,7 +4337,7 @@ final_plot <- wrap_plots(season6, season3, ncol = 1, guides = "collect") +
   
 
 final_plot
-ggsave("seaonality_prevalence.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("seaonality_prevalence.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 ```
 
 ## add plot of fish body size through time
@@ -4410,7 +4400,7 @@ fish_size <- ggplot(full_data,
   guides(linetype = "none")
 
 fish_size
-ggsave("fish_size.jpeg", width = 10, height = (9/16)*10, dpi = 300)
+ggsave("fish_size.jpeg", width = 10, height = (9/16)*10, dpi = 1000)
 ```
 
 
